@@ -1,9 +1,18 @@
 title: 学习笔记
 description: 个人技术学习、资料整理与日常记录
 baseurl: ""
-url: "https://yifree.github.io/weekly"
+url: "https://yifree.github.io/"
 timezone: Asia/Shanghai
 encoding: utf-8
+
+
+
+# 分页配置（必须加，不加就不显示文章）
+paginate: 10
+paginate_path: "/page:num/"
+
+
+
 
 markdown: kramdown
 highlighter: rouge
