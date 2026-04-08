@@ -26,11 +26,8 @@ kramdown:
 gitalk:
   clientID: YOUR_CLIENT_ID
   clientSecret: YOUR_CLIENT_SECRET
-  repo: weekly
+  repo: yifree.github.io
   owner: yifree
   admin: [yifree]
   distractionFreeMode: true
 
-umami:
-  id: YOUR_UMAMI_ID
-  src: https://umami.example.com/script.js
