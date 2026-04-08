@@ -5,14 +5,9 @@ url: "https://yifree.github.io/"
 timezone: Asia/Shanghai
 encoding: utf-8
 
-
-
-# 分页配置（必须加，不加就不显示文章）
-paginate: 10
-paginate_path: "/page:num/"
-
-
-
+# 分页
+paginate: 12
+paginate_path: "/page/:num/"
 
 markdown: kramdown
 highlighter: rouge
@@ -22,9 +17,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
-
-paginate: 12
-paginate_path: "/page/:num/"
 
 kramdown:
   input: GFM
