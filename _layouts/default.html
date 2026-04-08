@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} | {{ site.title }}</title>
+<link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+{% include umami.html %}
+</head>
+<body>
+
+<div class="container">
+  <div class="main">
+    {% unless page.home == true %}
+    <div class="sidebar">
+      <div class="toc">
+        <strong>目录</strong>
+        {% include toc.html html=content h_min=1 h_max=3 %}
+      </div>
+    </div>
+    {% endunless %}
+
+    <div class="content">
+      {{ content }}
+
+      {% if page.layout == 'default' and page.title != '归档' and page.title != '404' %}
+      <div class="comment-section">
+        {% include gitalk.html %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<button id="backToTop">↑ 返回顶部</button>
+<button id="darkToggle">暗黑模式</button>
+<script src="/assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% capture tocWorkspace %}
+{% assign myMin = include.h_min | default: 1 %}
+{% assign myMax = include.h_max | default: 3 %}
+{% assign myHtml = include.html %}
+{% assign myHtml = myHtml | replace: '<h', '#h' %}
+{% assign paragraphs = myHtml | split: '<h' %}
+{% for p in paragraphs %}
+{% if p contains '#h' and p contains '>' %}
+{% assign hLevel = p | slice: 1 | plus: 0 %}
+{% if hLevel >= myMin and hLevel <= myMax %}
+{% assign idStart = p | split: 'id="' %}
+{% assign id = idStart[1] | split: '"' | first %}
+{% assign title = p | split: '>' | slice: 1 | join: '>' | split: '<' | first %}
+<a href="#{{ id }}" class="toc-item-{{ hLevel }}">{{ title }}</a>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endcapture %}{% assign tocWorkspace = '' %}
