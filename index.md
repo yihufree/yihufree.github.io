@@ -16,7 +16,6 @@ title: 首页
 
 {% for post in site.posts %}
 
-
 <div class="post-item">
   <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
   <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
