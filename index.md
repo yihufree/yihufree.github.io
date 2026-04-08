@@ -19,6 +19,13 @@ title: 首页
 <div class="post-item">
   <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
   <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  {% if post.tags %}
+  <div class="post-tags">
+    {% for tag in post.tags %}
+    <a href="/tags.html#{{ tag }}" class="post-tag">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
 </div>
 {% endfor %}
 </div>
@@ -34,5 +41,6 @@ title: 首页
 
 <p style="margin-top:30px;">
   <a href="/archive.html">笔记归档</a> |
+  <a href="/tags.html">标签分类</a> |
   <a href="/feed.xml">RSS 订阅</a>
 </p>
