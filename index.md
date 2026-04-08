@@ -13,7 +13,11 @@ title: 首页
 <div id="search-results"></div>
 
 <div id="posts-list">
-{% for post in paginator.posts %}
+
+{% for post in site.posts %}
+
+# 原来是{% for post in paginator.posts %}无法显示
+
 <div class="post-item">
   <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
   <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
