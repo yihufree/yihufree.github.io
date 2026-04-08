@@ -1,14 +1,21 @@
 {% capture tocWorkspace %}
-{% assign content = page.content %}
-{% assign lines = content | split: '\n' %}
-{% for line in lines %}
-  {% if line starts with '#' %}
-    {% assign level = line | split: ' ' | first | size %}
-    {% if level >= 1 and level <= 3 %}
-      {% assign title = line | remove_first: '#' | remove_first: '#' | remove_first: '#' | strip %}
-      {% assign id = title | slugify %}
-      <a href="#{{ id }}" class="toc-item-{{ level }}">{{ title }}</a>
+{% assign myMin = include.h_min | default: 1 %}
+{% assign myMax = include.h_max | default: 3 %}
+{% assign myHtml = include.html %}
+
+{% assign paragraphs = myHtml | split: '<h' %}
+{% for p in paragraphs offset:1 %}
+  {% assign hLevel = p | slice: 0 | plus: 0 %}
+  {% if hLevel >= myMin and hLevel <= myMax %}
+    {% assign idStart = p | split: 'id="' %}
+    {% if idStart.size > 1 %}
+      {% assign id = idStart[1] | split: '"' | first %}
+    {% else %}
+      {% assign titleRaw = p | split: '>' | slice: 1 | join: '>' | split: '<' | first %}
+      {% assign id = titleRaw | slugify %}
     {% endif %}
+    {% assign title = p | split: '>' | slice: 1 | join: '>' | split: '<' | first %}
+    <a href="#{{ id }}" class="toc-item-{{ hLevel }}">{{ title }}</a>
   {% endif %}
 {% endfor %}
 {% endcapture %}
