@@ -16,7 +16,6 @@ title: 首页
 
 {% for post in site.posts %}
 
-# 原来是{% for post in paginator.posts %}无法显示
 
 <div class="post-item">
   <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
