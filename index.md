@@ -3,16 +3,22 @@ layout: default
 title: 首页
 ---
 
-<div class="home-header">
-  <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
-  <h1>学习笔记</h1>
-  <p>持续学习，持续记录</p>
-</div>
-
-<input type="text" id="search-input" placeholder="搜索笔记..." style="width:100%;padding:10px;margin-bottom:20px;font-size:16px;border-radius:6px;border:1px solid #ddd;">
-<div id="search-results"></div>
-
-<div id="posts-list">
+<div class="home-layout">
+  <!-- 左侧个人信息区域 -->
+  <div class="home-sidebar">
+    <div class="home-header">
+      <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
+      <h1>学习笔记</h1>
+      <p>持续学习，持续记录</p>
+    </div>
+  </div>
+  
+  <!-- 右侧内容区域 -->
+  <div class="home-content">
+    <input type="text" id="search-input" placeholder="搜索笔记..." style="width:100%;padding:10px;margin-bottom:20px;font-size:16px;border-radius:6px;border:1px solid #ddd;">
+    <div id="search-results"></div>
+    
+    <div id="posts-list">
 
 {% for post in site.posts %}
 
@@ -37,6 +43,9 @@ title: 首页
   {% if paginator.next_page %}
   <a href="{{ paginator.next_page_path }}">下一页</a>
   {% endif %}
+</div>
+    </div>
+  </div>
 </div>
 
 <p style="margin-top:30px;">
