@@ -20,8 +20,8 @@ home: true
     <div class="home-sidebar">
       <div class="home-header">
         <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
-        <h1>学习笔记</h1>
-        <p>持续学习，持续记录</p>
+        <h1>学习笔记 坚持学习</h1>  
+        <!-- <p>持续学习，持续记录</p> -->
       </div>
     </div>
     
