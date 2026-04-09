@@ -97,12 +97,17 @@ if (tocItems.length > 0) {
 }
 
 // 浮动导航按钮功能
-const floatingNav = document.getElementById('floatingNav');
-const prevBtn = document.getElementById('prevPost');
-const homeBtn = document.getElementById('backToHome');
-const nextBtn = document.getElementById('nextPost');
-
-if (floatingNav && prevBtn && homeBtn && nextBtn) {
+document.addEventListener('DOMContentLoaded', function() {
+  const floatingNav = document.getElementById('floatingNav');
+  const prevBtn = document.getElementById('prevPost');
+  const homeBtn = document.getElementById('backToHome');
+  const nextBtn = document.getElementById('nextPost');
+  
+  if (!floatingNav || !prevBtn || !homeBtn || !nextBtn) {
+    console.log('浮动导航按钮元素未找到，可能不是文章页面');
+    return;
+  }
+  
   // 获取所有文章数据
   let allPosts = [];
   
@@ -143,7 +148,7 @@ if (floatingNav && prevBtn && homeBtn && nextBtn) {
     const currentIndex = allPosts.findIndex(post => {
       // 处理URL匹配，考虑多种格式
       const postUrl = post.url.startsWith('/') ? post.url : '/' + post.url;
-      const normalizedCurrentPath = currentPath.replace(/^\.html$/, '');
+      const normalizedCurrentPath = currentPath.replace(/\.html$/, '');
       
       return postUrl === currentPath || 
              postUrl === normalizedCurrentPath ||
@@ -186,4 +191,4 @@ if (floatingNav && prevBtn && homeBtn && nextBtn) {
   
   // 监听页面变化（用于单页应用或动态加载）
   window.addEventListener('popstate', updateNavigationButtons);
-}
+});
