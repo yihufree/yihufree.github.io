@@ -97,6 +97,7 @@ body {
   margin-top: 8px;
 }
 /* 主页布局 - 隐藏侧边栏，使用新布局 */
+
 .home-layout {
   display: flex;
   gap: 40px;
@@ -417,22 +418,7 @@ blockquote {
 
 
 /* 主页新布局样式 */
-.home-layout {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  margin-top: 30px;
-}
 
-.home-sidebar {
-  width: 280px;
-  flex-shrink: 0;
-}
-
-.home-content {
-  flex: 1;
-  min-width: 0;
-}
 
 .home-sidebar .home-header {
   position: sticky;
