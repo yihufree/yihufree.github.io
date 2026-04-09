@@ -115,6 +115,15 @@ body {
   min-width: 0;
 }
 
+/* 左侧栏：个人信息区域 + 目录侧边栏（上下排列） */
+.home-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 280px;
+  flex-shrink: 0;
+}
+
 .home-sidebar .home-header {
   position: sticky;
   top: 30px;

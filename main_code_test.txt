@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>首页 | 学习笔记</title>
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<body>
+
+<!-- 题头图区域 -->
+<div class="header-image">
+  <img src="/assets/images/header.jpg" alt="题头图" class="header-img">
+</div>
+
+<div class="container">
+  <div class="main">
+    
+    <div class="sidebar">
+      <div class="toc">
+        <strong>目录</strong>
+        
+
+
+
+
+
+
+
+  
+  
+    
+    
+    
+    <a href="#search-input" class="toc-item-1">学习笔记</a>
+  
+
+  
+  
+    
+    
+    
+    <a href="#" class="toc-item-2"></a>
+  
+
+  
+  
+    
+    
+    
+    <a href="#" class="toc-item-2"></a>
+  
+
+  
+  
+    
+    
+    
+    <a href="#" class="toc-item-2"></a>
+  
+
+  
+  
+    
+    
+    
+    <a href="#" class="toc-item-2"></a>
+  
+
+
+
+      </div>
+    </div>
+    
+
+    <div class="content">
+      <div class="home-header">
+  <img src="/assets/images/avatar.jpg" alt="头像" class="avatar" />
+  <h1>学习笔记</h1>
+  <p>持续学习，持续记录</p>
+</div>
+
+<p><input type="text" id="search-input" placeholder="搜索笔记..." style="width:100%;padding:10px;margin-bottom:20px;font-size:16px;border-radius:6px;border:1px solid #ddd;" /></p>
+<div id="search-results"></div>
+
+<div id="posts-list">
+
+
+
+<div class="post-item">
+  <span class="post-date">2026-04-08</span>
+  <h2 class="post-title"><a href="/2026/04/08/%E7%AC%94%E8%AE%B0%E6%96%87%E6%A1%A3%E6%A8%A1%E6%9D%BF.html">第 000 期 | 笔记文档模板</a></h2>
+  
+  <div class="post-tags">
+    
+    <a href="/tags.html#模板" class="post-tag">模板</a>
+    
+    <a href="/tags.html#写作" class="post-tag">写作</a>
+    
+    <a href="/tags.html#指南" class="post-tag">指南</a>
+    
+  </div>
+  
+</div>
+
+
+<div class="post-item">
+  <span class="post-date">2026-04-08</span>
+  <h2 class="post-title"><a href="/2026/04/08/%E7%AC%94%E8%AE%B0%E4%BA%8C.html">第 002 期｜学习笔记开篇</a></h2>
+  
+  <div class="post-tags">
+    
+    <a href="/tags.html#学习" class="post-tag">学习</a>
+    
+    <a href="/tags.html#Markdown" class="post-tag">Markdown</a>
+    
+    <a href="/tags.html#GitHub" class="post-tag">GitHub</a>
+    
+  </div>
+  
+</div>
+
+
+<div class="post-item">
+  <span class="post-date">2026-04-08</span>
+  <h2 class="post-title"><a href="/2026/04/08/%E7%AC%94%E8%AE%B0%E4%B8%80.html">第 001 期 | 学习笔记启动</a></h2>
+  
+  <div class="post-tags">
+    
+    <a href="/tags.html#学习" class="post-tag">学习</a>
+    
+    <a href="/tags.html#笔记" class="post-tag">笔记</a>
+    
+    <a href="/tags.html#GitHub" class="post-tag">GitHub</a>
+    
+  </div>
+  
+</div>
+
+
+<div class="post-item">
+  <span class="post-date">2024-05-20</span>
+  <h2 class="post-title"><a href="/2024/05/20/test.html">测试文章</a></h2>
+  
+  <div class="post-tags">
+    
+  </div>
+  
+</div>
+
+</div>
+
+<div class="pagination">
+  
+  
+</div>
+
+<p style="margin-top:30px;">
+  <a href="/archive.html">笔记归档</a> |
+  <a href="/tags.html">标签分类</a> |
+  <a href="/feed.xml">RSS 订阅</a>
+</p>
+
+
+      
+
+      
+      <div class="comment-section">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<div id="gitalk-container" style="margin-top:3em;"></div>
+<script>
+var gitalk = new Gitalk({
+  clientID: "YOUR_CLIENT_ID",
+  clientSecret: "YOUR_CLIENT_SECRET",
+  repo: "yifree.github.io",
+  owner: "yifree",
+  admin: ["yifree"],
+  id: "",
+  distractionFreeMode: true
+});
+gitalk.render('gitalk-container');
+</script>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<button id="backToTop">↑ 返回顶部</button>
+<button id="darkToggle">暗黑模式</button>
+<script src="/assets/js/script.js"></script>
+</body>
+</html>

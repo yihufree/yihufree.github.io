@@ -5,16 +5,27 @@ home: true
 ---
 
 <div class="home-layout">
-  <!-- 左侧个人信息区域 -->
-  <div class="home-sidebar">
-    <div class="home-header">
-      <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
-      <h1>学习笔记</h1>
-      <p>持续学习，持续记录</p>
+  <!-- 左侧栏：个人信息区域 + 目录侧边栏（上下排列） -->
+  <div class="home-left-column">
+    <!-- 个人信息区域 -->
+    <div class="home-sidebar">
+      <div class="home-header">
+        <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
+        <h1>学习笔记</h1>
+        <p>持续学习，持续记录</p>
+      </div>
+    </div>
+    
+    <!-- 目录侧边栏 -->
+    <div class="sidebar">
+      <div class="toc">
+        <strong>目录</strong>
+        {% include toc.html html=content %}
+      </div>
     </div>
   </div>
   
-  <!-- 右侧内容区域 -->
+  <!-- 右侧栏：内容区域 -->
   <div class="home-content">
     <input type="text" id="search-input" placeholder="搜索笔记..." style="width:100%;padding:10px;margin-bottom:20px;font-size:16px;border-radius:6px;border:1px solid #ddd;">
     <div id="search-results"></div>
