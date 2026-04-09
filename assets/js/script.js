@@ -124,7 +124,7 @@ if (floatingNav && prevBtn && homeBtn && nextBtn) {
     const currentPath = window.location.pathname;
     
     // 如果是主页，隐藏浮动导航
-    if (currentPath === '/' || currentPath === '/index.html') {
+    if (currentPath === '/' || currentPath === '/index.html' || currentPath === '/index') {
       floatingNav.style.display = 'none';
       return;
     }
@@ -140,9 +140,16 @@ if (floatingNav && prevBtn && homeBtn && nextBtn) {
     }
     
     // 查找当前文章在列表中的位置
-    const currentIndex = allPosts.findIndex(post => 
-      post.url === currentPath || post.url === currentPath.replace('.html', '')
-    );
+    const currentIndex = allPosts.findIndex(post => {
+      // 处理URL匹配，考虑多种格式
+      const postUrl = post.url.startsWith('/') ? post.url : '/' + post.url;
+      const normalizedCurrentPath = currentPath.replace(/^\.html$/, '');
+      
+      return postUrl === currentPath || 
+             postUrl === normalizedCurrentPath ||
+             postUrl === currentPath.replace('.html', '') ||
+             postUrl + '.html' === currentPath;
+    });
     
     if (currentIndex === -1) {
       // 当前文章不在列表中，禁用导航按钮
