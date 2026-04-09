@@ -422,8 +422,6 @@ blockquote {
     margin-bottom: 0;
   }
 }
-   transition: color 0.2s ease;
- }
 .content a:hover {
   color: var(--link-hover);
   text-decoration: underline;
