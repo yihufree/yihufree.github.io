@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 首页
+home: true
 ---
 
 <div class="home-layout">
