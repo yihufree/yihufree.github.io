@@ -4,6 +4,15 @@ title: 首页
 home: true
 ---
 
+<!-- 题头图左侧头像区域 -->
+<div class="header-avatar-overlay">
+  <div class="home-header">
+    <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
+    <h1>学习笔记</h1>
+    <p>持续学习，持续记录</p>
+  </div>
+</div>
+
 <div class="home-layout">
   <!-- 左侧栏：个人信息区域 + 目录侧边栏（上下排列） -->
   <div class="home-left-column">

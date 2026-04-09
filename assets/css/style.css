@@ -55,6 +55,50 @@ body {
 .dark .header-image {
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
+
+/* 题头图左侧头像区域 */
+.header-avatar-overlay {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.header-avatar-overlay .home-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  pointer-events: auto;
+}
+
+.header-avatar-overlay .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--link);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin-bottom: 12px;
+}
+
+.header-avatar-overlay h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+.header-avatar-overlay p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 6px 0 0 0;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
