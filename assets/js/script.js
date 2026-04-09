@@ -97,98 +97,27 @@ if (tocItems.length > 0) {
 }
 
 // 浮动导航按钮功能
-document.addEventListener('DOMContentLoaded', function() {
-  const floatingNav = document.getElementById('floatingNav');
-  const prevBtn = document.getElementById('prevPost');
-  const homeBtn = document.getElementById('backToHome');
-  const nextBtn = document.getElementById('nextPost');
-  
-  if (!floatingNav || !prevBtn || !homeBtn || !nextBtn) {
-    console.log('浮动导航按钮元素未找到，可能不是文章页面');
-    return;
-  }
-  
-  // 获取所有文章数据
-  let allPosts = [];
-  
-  // 尝试从搜索数据获取文章列表
-  fetch('/search.json')
-    .then(response => response.json())
-    .then(posts => {
-      allPosts = posts;
-      updateNavigationButtons();
-    })
-    .catch(error => {
-      console.error('获取文章列表失败:', error);
-      // 如果搜索数据获取失败，尝试从页面元素获取
-      updateNavigationButtons();
-    });
-  
-  // 更新导航按钮状态
-  function updateNavigationButtons() {
-    const currentPath = window.location.pathname;
-    
-    // 如果是主页，隐藏浮动导航
-    if (currentPath === '/' || currentPath === '/index.html' || currentPath === '/index') {
-      floatingNav.style.display = 'none';
-      return;
-    }
-    
+const floatingNav = document.getElementById('floatingNav');
+const prevBtn = document.getElementById('prevPost');
+const homeBtn = document.getElementById('backToHome');
+const nextBtn = document.getElementById('nextPost');
+
+if (floatingNav && prevBtn && homeBtn && nextBtn) {
+  // 如果是主页，隐藏浮动导航
+  const currentPath = window.location.pathname;
+  if (currentPath === '/' || currentPath === '/index.html' || currentPath === '/index') {
+    floatingNav.style.display = 'none';
+  } else {
     // 显示浮动导航
     floatingNav.style.display = 'flex';
     
-    // 如果无法获取文章数据，禁用上一篇/下一篇按钮
-    if (allPosts.length === 0) {
-      prevBtn.disabled = true;
-      nextBtn.disabled = true;
-      return;
-    }
-    
-    // 查找当前文章在列表中的位置
-    const currentIndex = allPosts.findIndex(post => {
-      // 处理URL匹配，考虑多种格式
-      const postUrl = post.url.startsWith('/') ? post.url : '/' + post.url;
-      const normalizedCurrentPath = currentPath.replace(/\.html$/, '');
-      
-      return postUrl === currentPath || 
-             postUrl === normalizedCurrentPath ||
-             postUrl === currentPath.replace('.html', '') ||
-             postUrl + '.html' === currentPath;
+    // 返回主页按钮功能
+    homeBtn.addEventListener('click', () => {
+      window.location.href = '/';
     });
     
-    if (currentIndex === -1) {
-      // 当前文章不在列表中，禁用导航按钮
-      prevBtn.disabled = true;
-      nextBtn.disabled = true;
-      return;
-    }
-    
-    // 更新上一篇按钮状态
-    if (currentIndex > 0) {
-      prevBtn.disabled = false;
-      prevBtn.onclick = () => {
-        window.location.href = allPosts[currentIndex - 1].url;
-      };
-    } else {
-      prevBtn.disabled = true;
-    }
-    
-    // 更新下一篇按钮状态
-    if (currentIndex < allPosts.length - 1) {
-      nextBtn.disabled = false;
-      nextBtn.onclick = () => {
-        window.location.href = allPosts[currentIndex + 1].url;
-      };
-    } else {
-      nextBtn.disabled = true;
-    }
+    // 上一篇/下一篇按钮暂时禁用（简化实现）
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
   }
-  
-  // 返回主页按钮功能
-  homeBtn.onclick = () => {
-    window.location.href = '/';
-  };
-  
-  // 监听页面变化（用于单页应用或动态加载）
-  window.addEventListener('popstate', updateNavigationButtons);
-});
+}
