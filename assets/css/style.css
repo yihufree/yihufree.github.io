@@ -59,7 +59,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-.home-header {
+/* 传统主页头部样式 */
+.content .home-header {
   text-align: center;
   margin-bottom: 40px;
   padding: 40px 20px;
@@ -68,7 +69,9 @@ body {
   box-shadow: var(--card-shadow);
   transition: all 0.3s ease;
 }
-.avatar {
+
+/* 传统头像样式 */
+.content .home-header .avatar {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -77,15 +80,18 @@ body {
   box-shadow: var(--card-shadow);
   transition: transform 0.3s ease;
 }
-.avatar:hover {
+
+.content .home-header .avatar:hover {
   transform: scale(1.05);
 }
-.home-header h1 {
+
+.content .home-header h1 {
   margin-top: 16px;
   font-size: 32px;
   font-weight: 700;
 }
-.home-header p {
+
+.content .home-header p {
   color: var(--muted);
   font-size: 18px;
   margin-top: 8px;
