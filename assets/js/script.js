@@ -98,19 +98,22 @@ if (tocItems.length > 0) {
 
 // 浮动导航按钮功能
 document.addEventListener('DOMContentLoaded', function() {
-  const floatingNav = document.getElementById('floatingNav');
   const prevBtn = document.getElementById('prevPost');
   const homeBtn = document.getElementById('backToHome');
   const nextBtn = document.getElementById('nextPost');
 
-  if (floatingNav && prevBtn && homeBtn && nextBtn) {
+  if (prevBtn && homeBtn && nextBtn) {
     // 如果是主页，隐藏浮动导航
     const currentPath = window.location.pathname;
     if (currentPath === '/' || currentPath === '/index.html' || currentPath === '/index') {
-      floatingNav.style.display = 'none';
+      prevBtn.style.display = 'none';
+      homeBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
     } else {
       // 显示浮动导航
-      floatingNav.style.display = 'flex';
+      prevBtn.style.display = 'block';
+      homeBtn.style.display = 'block';
+      nextBtn.style.display = 'block';
       
       // 返回主页按钮功能
       homeBtn.addEventListener('click', () => {
@@ -120,6 +123,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // 上一篇/下一篇按钮暂时禁用（简化实现）
       prevBtn.disabled = true;
       nextBtn.disabled = true;
+      prevBtn.style.background = 'var(--muted)';
+      nextBtn.style.background = 'var(--muted)';
     }
   }
 });
