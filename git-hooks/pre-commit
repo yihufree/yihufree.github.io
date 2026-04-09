@@ -1,0 +1,26 @@
+#!/bin/bash
+# Git提交前钩子：自动更新文章目录
+
+echo "🤖 正在自动更新文章目录..."
+
+# 检查是否有_posts文件夹的变化
+changed_files=$(git diff --cached --name-only --diff-filter=ACM)
+posts_changed=$(echo "$changed_files" | grep -E "^_posts/" || true)
+
+if [ -n "$posts_changed" ]; then
+    echo "📝 检测到文章变化，正在更新目录..."
+    
+    # 运行文章目录生成脚本
+    if python generate_toc.py; then
+        # 将更新的文章目录添加到提交中
+        git add 文章目录.md
+        echo "✅ 文章目录已更新并添加到提交"
+    else
+        echo "❌ 文章目录更新失败"
+        exit 1
+    fi
+else
+    echo "📄 没有检测到文章变化，跳过目录更新"
+fi
+
+echo "🎉 提交前检查完成"

@@ -1,0 +1,39 @@
+name: Update Table of Contents
+
+# 触发条件：当_posts文件夹有变化时自动运行
+on:
+  push:
+    paths:
+      - '_posts/**'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  update-toc:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        # 注意：需要设置仓库的workflow权限为读写权限
+        # 设置路径：Settings -> Actions -> General -> Workflow permissions
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install pyyaml
+
+    - name: Generate TOC
+      run: python generate_toc.py
+
+    - name: Commit and push if changed
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add 文章目录.md
+        git diff --staged --quiet || git commit -m "🤖 自动更新文章目录"
+        git push
