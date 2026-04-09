@@ -103,28 +103,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const nextBtn = document.getElementById('nextPost');
 
   if (prevBtn && homeBtn && nextBtn) {
-    // 如果是主页，隐藏浮动导航
-    const currentPath = window.location.pathname;
-    if (currentPath === '/' || currentPath === '/index.html' || currentPath === '/index') {
-      prevBtn.style.display = 'none';
-      homeBtn.style.display = 'none';
-      nextBtn.style.display = 'none';
-    } else {
-      // 显示浮动导航
-      prevBtn.style.display = 'block';
-      homeBtn.style.display = 'block';
-      nextBtn.style.display = 'block';
-      
-      // 返回主页按钮功能
-      homeBtn.addEventListener('click', () => {
-        window.location.href = '/';
-      });
-      
-      // 上一篇/下一篇按钮暂时禁用（简化实现）
-      prevBtn.disabled = true;
-      nextBtn.disabled = true;
-      prevBtn.style.background = 'var(--muted)';
-      nextBtn.style.background = 'var(--muted)';
-    }
+    // 在所有页面显示浮动导航按钮
+    prevBtn.style.display = 'block';
+    homeBtn.style.display = 'block';
+    nextBtn.style.display = 'block';
+    
+    // 返回主页按钮功能
+    homeBtn.addEventListener('click', () => {
+      window.location.href = '/';
+    });
+    
+    // 上一篇/下一篇按钮暂时禁用（简化实现）
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+    prevBtn.style.background = 'var(--muted)';
+    nextBtn.style.background = 'var(--muted)';
   }
 });
