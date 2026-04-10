@@ -56,7 +56,7 @@ if (input && results && postsList) {
       );
       
       // 生成搜索结果 HTML
-      let html = '';
+      let html = `<div style="margin-bottom: 16px; color: var(--muted); font-size: 14px;">找到 ${matchedPosts.length} 条结果</div>`;
       matchedPosts.forEach(post => {
         html += `<div class="search-result-item"><a href="${post.url}">${post.title}</a> <small>${post.date}</small></div>`;
       });
@@ -96,27 +96,3 @@ if (tocItems.length > 0) {
   });
 }
 
-// 浮动导航按钮功能
-document.addEventListener('DOMContentLoaded', function() {
-  const prevBtn = document.getElementById('prevPost');
-  const homeBtn = document.getElementById('backToHome');
-  const nextBtn = document.getElementById('nextPost');
-
-  if (prevBtn && homeBtn && nextBtn) {
-    // 在所有页面显示浮动导航按钮
-    prevBtn.style.display = 'block';
-    homeBtn.style.display = 'block';
-    nextBtn.style.display = 'block';
-    
-    // 返回主页按钮功能
-    homeBtn.addEventListener('click', () => {
-      window.location.href = '/';
-    });
-    
-    // 上一篇/下一篇按钮暂时禁用（简化实现）
-    prevBtn.disabled = true;
-    nextBtn.disabled = true;
-    prevBtn.style.background = 'var(--muted)';
-    nextBtn.style.background = 'var(--muted)';
-  }
-});

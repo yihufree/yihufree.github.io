@@ -11,7 +11,6 @@ paginate_path: "/page/:num/"
 
 markdown: kramdown
 highlighter: rouge
-theme: minima
 
 plugins:
   - jekyll-feed
