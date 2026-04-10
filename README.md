@@ -121,6 +121,49 @@ tags: [技术, 学习, 分享]
 
 **你只需做一件事**：将写好的 Markdown 文件放入 `_posts` 目录，GitHub Pages 会自动构建并更新网站。
 
+### 5. 本地开发环境设置
+
+如果你想在本地测试和调试网站，可以按照以下步骤设置本地开发环境：
+
+#### 5.1 安装 Ruby 和 Jekyll
+
+1. **安装 Ruby**：
+   - Windows 用户：访问 [RubyInstaller](https://rubyinstaller.org/) 下载并安装 Ruby + Devkit
+   - macOS 用户：使用 Homebrew 安装 `brew install ruby`
+   - Linux 用户：使用包管理器安装，例如 `sudo apt-get install ruby-full`
+
+2. **安装 Jekyll 和 Bundler**：
+   ```bash
+   gem install jekyll bundler
+   ```
+
+#### 5.2 克隆仓库并安装依赖
+
+1. **克隆仓库**：
+   ```bash
+   git clone https://github.com/your-username/your-username.github.io.git
+   cd your-username.github.io
+   ```
+
+2. **安装依赖**：
+   ```bash
+   bundle install
+   ```
+
+#### 5.3 启动本地开发服务器
+
+```bash
+bundle exec jekyll serve
+```
+
+启动成功后，打开浏览器访问 `http://localhost:4000` 即可查看本地网站。
+
+#### 5.4 本地开发说明
+
+- 本地服务器会自动监控文件变化，当你修改文件后，页面会自动刷新
+- 本地开发环境与 GitHub Pages 环境完全一致，确保你的修改在部署后能正常显示
+- 如果你需要停止本地服务器，按 `Ctrl+C` 即可
+
 ## 目录结构
 
 ```

@@ -4,38 +4,27 @@ title: 首页
 home: true
 ---
 
-<!-- 题头图左侧头像区域 -->
-<div class="header-avatar-overlay">
-  <div class="home-header">
-    <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
-    <h1>学习笔记 坚持学习</h1>
-  <!-- <p>持续学习，持续记录</p> -->
-  </div>
-</div>
-
 <div class="home-layout">
   <!-- 左侧栏：个人信息区域 + 目录侧边栏（上下排列） -->
-  <div class="home-left-column">
+  <aside class="home-left-column">
     <!-- 个人信息区域 -->
-    <div class="home-sidebar">
-      <div class="home-header">
-        <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
-        <h1>学习笔记 坚持学习</h1>  
-        <!-- <p>持续学习，持续记录</p> -->
-      </div>
+    <div class="home-header">
+      <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
+      <h1>学习笔记</h1>
+      <p>持续学习，持续记录</p>
     </div>
     
     <!-- 目录侧边栏 -->
-    <div class="sidebar">
+    <nav class="sidebar">
       <div class="toc">
         <strong>目录</strong>
         {% include toc.html html=content %}
       </div>
-    </div>
-  </div>
+    </nav>
+  </aside>
   
   <!-- 右侧栏：内容区域 -->
-  <div class="home-content">
+  <main class="home-content">
     <input type="text" id="search-input" placeholder="搜索笔记..." style="width:100%;padding:10px;margin-bottom:20px;font-size:16px;border-radius:6px;border:1px solid #ddd;">
     <div id="search-results"></div>
     
@@ -43,7 +32,7 @@ home: true
 
 {% for post in site.posts %}
 
-<div class="post-item">
+<article class="post-item">
   <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
   <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
   {% if post.tags %}
@@ -53,7 +42,7 @@ home: true
     {% endfor %}
   </div>
   {% endif %}
-</div>
+</article>
 {% endfor %}
 </div>
 
@@ -65,12 +54,12 @@ home: true
   <a href="{{ paginator.next_page_path }}">下一页</a>
   {% endif %}
 </div>
-    </div>
+    </main>
   </div>
 </div>
 
-<p style="margin-top:30px;">
+<nav class="site-nav" style="margin-top:30px;">
   <a href="/archive.html">笔记归档</a> |
   <a href="/tags.html">标签分类</a> |
   <a href="/feed.xml">RSS 订阅</a>
-</p>
+</nav>
