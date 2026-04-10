@@ -331,6 +331,30 @@ body {
 .post-title a:hover {
   color: var(--link);
 }
+
+.nav-buttons {
+  margin: 30px 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  padding: 8px 16px;
+  background: var(--link);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nav-button:hover {
+  background: var(--link-hover);
+  transform: translateY(-1px);
+}
+
 .pagination {
   margin-top: 40px;
   display: flex;
