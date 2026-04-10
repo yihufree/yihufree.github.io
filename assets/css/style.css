@@ -300,7 +300,7 @@ body {
 }
 .post-item {
   margin-bottom: 24px;
-  padding: 24px;
+  padding: 16px 24px;
   background: var(--card-bg);
   border-radius: 12px;
   box-shadow: var(--card-shadow);
@@ -314,11 +314,11 @@ body {
   color: var(--muted);
   font-size: 14px;
   display: block;
+  margin: 0 0 4px 0;
 }
 .post-title {
   font-size: 22px;
-  margin-top: 8px;
-  margin-bottom: 12px;
+  margin: 4px 0 12px 0;
 }
 .post-title a {
   color: var(--text);

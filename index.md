@@ -55,7 +55,6 @@ home: true
   {% endif %}
 </div>
     </main>
-  </div>
 </div>
 
 <nav class="site-nav" style="margin-top:30px;">
