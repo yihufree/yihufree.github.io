@@ -32,17 +32,6 @@
     <div class="content">
       {{ content }}
 
-      {% unless page.home == true %}
-      <!-- 导航按钮 -->
-      <div class="nav-buttons">
-        <a href="/" class="nav-button">返回主页</a>
-        {% if page.layout == 'post' %}
-          {% if page.previous %}<a href="{{ page.previous.url }}" class="nav-button">上一篇</a>{% endif %}
-          {% if page.next %}<a href="{{ page.next.url }}" class="nav-button">下一篇</a>{% endif %}
-        {% endif %}
-      </div>
-      {% endunless %}
-
       {% if page.layout == 'post' %}
       <!-- 相关文章推荐 -->
       <div class="related-posts">
@@ -91,8 +80,17 @@
 </div>
 
 <nav class="floating-nav">
-  <button id="backToTop">↑ 返回顶部</button>
-  <button id="darkToggle">暗黑模式</button>
+  <div class="floating-nav-container">
+    {% unless page.home == true %}
+    <a href="/" class="floating-nav-button">返回主页</a>
+    {% if page.layout == 'post' %}
+      {% if page.previous %}<a href="{{ page.previous.url }}" class="floating-nav-button">上一篇</a>{% endif %}
+      {% if page.next %}<a href="{{ page.next.url }}" class="floating-nav-button">下一篇</a>{% endif %}
+    {% endif %}
+    {% endunless %}
+    <button id="backToTop">↑ 返回顶部</button>
+    <button id="darkToggle">暗黑模式</button>
+  </div>
 </nav>
 
 <script src="/assets/js/script.js"></script>

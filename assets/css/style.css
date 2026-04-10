@@ -395,16 +395,57 @@ blockquote {
   margin: 1.5em 0;
   font-style: italic;
 }
-#backToTop, #darkToggle {
+.floating-nav-container {
   position: fixed;
   right: 30px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 99;
+}
+
+.floating-nav-button {
   padding: 10px 16px;
   background: var(--link);
   color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  z-index: 99;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  min-width: 80px;
+}
+
+.floating-nav-button:hover {
+  background: var(--link-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+#backToTop {
+  padding: 10px 16px;
+  background: var(--link);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+#darkToggle {
+  padding: 10px 16px;
+  background: var(--link);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
