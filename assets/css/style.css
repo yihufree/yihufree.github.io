@@ -405,6 +405,60 @@ blockquote {
   z-index: 99;
 }
 
+/* 移动端响应式设计 */
+@media (max-width: 768px) {
+  .floating-nav-container {
+    right: 15px;
+    top: 80px;
+  }
+  
+  .floating-nav-button {
+    padding: 8px 12px;
+    font-size: 12px;
+    min-width: 60px;
+  }
+  
+  #backToTop, #darkToggle {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .home-layout {
+    flex-direction: column;
+  }
+  
+  .home-left-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .home-content {
+    width: 100%;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .main {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    width: 100%;
+  }
+  
+  .header-img {
+    height: 150px;
+  }
+}
+
 .floating-nav-button {
   padding: 10px 16px;
   background: var(--link);
