@@ -398,7 +398,7 @@ blockquote {
 .floating-nav-container {
   position: fixed;
   right: 30px;
-  top: 100px;
+  bottom: 120px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -409,7 +409,7 @@ blockquote {
 @media (max-width: 768px) {
   .floating-nav-container {
     right: 15px;
-    top: 80px;
+    bottom: 100px;
   }
   
   .floating-nav-button {
@@ -510,11 +510,11 @@ blockquote {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 #backToTop { 
-  bottom: 90px; 
+  bottom: 30px; 
   display: none;
 }
 #darkToggle { 
-  bottom: 30px;
+  bottom: 90px;
 }
 /* 浮动导航按钮样式 */
 #prevPost, #backToHome, #nextPost {
@@ -887,6 +887,25 @@ blockquote {
 }
 .archive-list a:hover {
   color: var(--link);
+}
+
+/* 页脚样式 */
+.footer {
+  max-width: 1200px;
+  margin: 40px auto 20px;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+.footer a {
+  color: var(--link);
+  text-decoration: none;
+}
+.footer a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
 }
 
 @media (max-width:768px) {
