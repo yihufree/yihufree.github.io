@@ -10,7 +10,7 @@ home: true
     <!-- 个人信息区域 -->
     <div class="home-header">
       <img src="/assets/images/avatar.jpg" alt="头像" class="avatar">
-      <h1>学习笔记</h1>
+      <h1>阿飞的学习笔记</h1>
       <p>持续学习，持续记录</p>
     </div>
     
