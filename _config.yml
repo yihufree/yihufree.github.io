@@ -1,7 +1,7 @@
-title: 学习笔记
+title: 阿飞的学习笔记
 description: 个人技术学习、资料整理与日常记录
 baseurl: ""
-url: "https://yifree.github.io"
+url: "https://yihufree.github.io"
 timezone: Asia/Shanghai
 encoding: utf-8
 
@@ -25,12 +25,12 @@ kramdown:
 gitalk:
   # 请在 GitHub 开发者设置中创建 OAuth 应用获取以下信息
   # 步骤：Settings -> Developer settings -> OAuth Apps -> New OAuth App
-  # Homepage URL: https://yifree.github.io/
-  # Authorization callback URL: https://yifree.github.io/
+  # Homepage URL: https://yihufree.github.io/
+  # Authorization callback URL: https://yihufree.github.io/
   clientID: YOUR_CLIENT_ID
   clientSecret: YOUR_CLIENT_SECRET
-  repo: yifree.github.io
-  owner: yifree
-  admin: [yifree]
+  repo: yihufree.github.io
+  owner: yihufree
+  admin: [yihufree]
   distractionFreeMode: true
 
