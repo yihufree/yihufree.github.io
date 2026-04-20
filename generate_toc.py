@@ -46,6 +46,10 @@ class ArticleTocGenerator:
             title = metadata.get('title', '无标题')
             date = metadata.get('date', '')
             tags = metadata.get('tags', [])
+
+            # 2026-04-17 10:45:00 修改：将日期统一转为字符串，避免datetime对象与字符串混用导致切片错误
+            if hasattr(date, 'strftime'):
+                date = date.strftime('%Y-%m-%d')
             
             # 生成文章URL（Jekyll格式）
             filename = file_path.stem
@@ -82,7 +86,8 @@ class ArticleTocGenerator:
                 articles.append(article)
         
         # 按日期排序（最新的在前）
-        self.articles = sorted(articles, key=lambda x: x['date'], reverse=True)
+        # 2026-04-17 10:30:00 修改：将日期统一转为字符串比较，避免datetime.datetime与datetime.date类型不兼容问题
+        self.articles = sorted(articles, key=lambda x: str(x['date']) if x['date'] else '', reverse=True)
         print(f"找到 {len(self.articles)} 篇文章")
     
     def generate_github_toc(self):
