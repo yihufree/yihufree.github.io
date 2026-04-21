@@ -46,6 +46,9 @@ class ArticleTocGenerator:
             title = metadata.get('title', '无标题')
             date = metadata.get('date', '')
             tags = metadata.get('tags', [])
+            
+            # 转义标题中的方括号，防止破坏 Markdown 链接语法
+            title = title.replace('[', '\\[').replace(']', '\\]')
 
             # 2026-04-17 10:45:00 修改：将日期统一转为字符串，避免datetime对象与字符串混用导致切片错误
             if hasattr(date, 'strftime'):
