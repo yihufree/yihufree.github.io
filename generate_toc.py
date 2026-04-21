@@ -54,15 +54,9 @@ class ArticleTocGenerator:
             if hasattr(date, 'strftime'):
                 date = date.strftime('%Y-%m-%d')
             
-            # 生成文章URL（Jekyll格式）
+            # 生成文章URL（指向_posts目录下的MD文件，便于在GitHub仓库中直接浏览）
             filename = file_path.stem
-            url_parts = filename.split('-')
-            if len(url_parts) >= 3:
-                year, month, day = url_parts[:3]
-                slug = '-'.join(url_parts[3:])
-                url = f"/{year}/{month}/{day}/{slug}.html"
-            else:
-                url = f"/{filename}.html"
+            url = f"_posts/{file_path.name}"
             
             return {
                 'title': title,
