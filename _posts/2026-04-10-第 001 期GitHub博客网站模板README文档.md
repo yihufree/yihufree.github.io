@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 第 001 期 | GitHub 博客网站模板README文档
+title: 第001期GitHub博客网站模板README文档
 date: 2026-04-10
 tags: [博客, 网站, 模板, 学习, 技术, GitHub]
 ---
 
-# 第 001 期 |GitHub 博客网站模板README文档
+# 第 001 期GitHub博客网站模板README文档
 
 这是一个基于 GitHub Pages + Jekyll 构建的个人博客网站模板，设计简洁、实用、美观，适合技术爱好者记录学习笔记、分享技术心得。
 
