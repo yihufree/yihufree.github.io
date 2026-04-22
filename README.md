@@ -325,6 +325,62 @@ A:
 4. 等待 1-2 分钟，GitHub Pages 构建需要一定时间
 5. 清除浏览器缓存后刷新页面
 
+### Q: 文章目录中的链接显示为纯文本怎么办？
+A: 
+1. 检查文章标题中是否包含英文方括号 `[]`，这会破坏 Markdown 链接语法
+2. 检查文章标题中是否包含竖线 `|`，这会破坏 Markdown 表格结构
+3. 运行 `python generate_toc.py` 重新生成文章目录
+
+### Q: GitHub Actions 无法自动更新文章目录怎么办？
+A: 
+1. 进入仓库设置：Settings -> Actions -> General
+2. 在 Workflow permissions 中选择 "Read and write permissions"
+3. 点击 Save 保存配置
+
+## ⚠️ 重要注意事项
+
+### 1. 文件名格式要求
+
+**必须严格遵循** `YYYY-MM-DD-标题.md` 格式：
+- 日期格式：`YYYY-MM-DD`（年-月-日）
+- 日期和标题之间**必须有连字符 `-`**
+- 错误示例：`2026-04-08标题.md`（缺少连字符）
+- 正确示例：`2026-04-08-标题.md`（日期和标题之间有连字符）
+
+### 2. 文章标题特殊字符处理
+
+文章标题中**不要使用**以下字符：
+- 英文方括号：`[` `]`（会破坏 Markdown 链接语法）
+- 竖线：`|`（会破坏 Markdown 表格结构）
+
+**推荐做法**：
+- 使用中文括号代替英文方括号：`（）`
+- 避免在标题中使用竖线
+
+### 3. GitHub Actions 权限配置
+
+为了让系统自动更新文章目录，需要配置正确的权限：
+
+1. 访问仓库：`https://github.com/your-username/your-username.github.io`
+2. 点击 Settings -> Actions -> General
+3. 在 Workflow permissions 中选择 "Read and write permissions"
+4. 点击 Save 保存
+
+### 4. 文章目录生成
+
+文章目录会自动生成，但如果需要手动更新，可以运行：
+
+```bash
+python generate_toc.py
+```
+
+### 5. 本地开发提示
+
+在本地开发时，如果遇到文章不显示的问题：
+- 检查 `_posts` 目录下的文件名格式
+- 确保文件名符合 `YYYY-MM-DD-标题.md` 格式
+- 运行 `bundle exec jekyll serve` 重新启动服务器
+
 ### Q: 网站显示 404 错误怎么办？
 A:
 1. 检查仓库名称是否为 `your-username.github.io` 格式
