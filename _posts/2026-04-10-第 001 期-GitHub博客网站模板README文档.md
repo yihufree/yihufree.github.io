@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 第 001 期 | GitHub 博客网站模板README文档
+title: 第 001 期 GitHub 博客网站模板README文档
 date: 2026-04-10
 tags: [博客, 网站, 模板, 学习, 技术, GitHub]
 ---
