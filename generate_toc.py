@@ -46,20 +46,19 @@ class ArticleTocGenerator:
             title = metadata.get('title', '无标题')
             date = metadata.get('date', '')
             tags = metadata.get('tags', [])
+            
+            # 将标题中的英文方括号替换为中文括号，防止破坏 Markdown 链接语法
+            title = title.replace('[', '（').replace(']', '）')
+            # 将标题中的竖线替换为中文竖线或空格，防止破坏 Markdown 表格结构
+            title = title.replace('|', '')
 
             # 2026-04-17 10:45:00 修改：将日期统一转为字符串，避免datetime对象与字符串混用导致切片错误
             if hasattr(date, 'strftime'):
                 date = date.strftime('%Y-%m-%d')
             
-            # 生成文章URL（Jekyll格式）
+            # 生成文章URL（指向_posts目录下的MD文件，便于在GitHub仓库中直接浏览）
             filename = file_path.stem
-            url_parts = filename.split('-')
-            if len(url_parts) >= 3:
-                year, month, day = url_parts[:3]
-                slug = '-'.join(url_parts[3:])
-                url = f"/{year}/{month}/{day}/{slug}.html"
-            else:
-                url = f"/{filename}.html"
+            url = f"_posts/{file_path.name}"
             
             return {
                 'title': title,
